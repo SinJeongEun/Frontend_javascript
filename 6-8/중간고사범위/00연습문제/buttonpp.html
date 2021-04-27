@@ -7,34 +7,22 @@
           border: 1px solid gray; box-shadow: 5px 5px 5px #aaa; }
     p { font-size: 15pt; color: blue; }
     button { padding: 0.4em 3em;  }
-    .green { background-color: #afa; }
-    .red { background-color: #faa; }
-  </style>
+     </style>
 </head>
 <body>
-  <!-- <div id="app" v-bind:class="{red : this.num%2 != 0, green : this.num % 2 ==0}"> -->
-  <div id="app" v-bind:class="color()">
-      <h1>{{  evenOrOdd() }}</h1>
-      <p>{{ num }}</p>
-      <hr />
+  <div id="app">
       <input type="text" v-model="num">
+      <button type="button" @click="++num">++</button>
+      <button type="button" @click="--num">--</button>
+
   </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
         num: 0
-      },
-      methods:{
-        evenOrOdd(){
-            if(this.num % 2 ==0)return "짝수";
-            else return "홀수";
-        },
-        color(){
-            if(this.num % 2 ==0)return "green";
-            else return "red";
-        }
       }
+   
     })
    </script>
 </body>
